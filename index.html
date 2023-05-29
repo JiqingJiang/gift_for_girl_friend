@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>魔方</title>
+
+    <style type="text/css">
+        body {
+            height: 100vh;
+            width: 100vw;
+
+            margin: 0;
+            padding: 0;
+        }
+
+        #content {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            top: 50%;
+            margin-top: -150px;
+            left: 50%;
+            margin-left: -150px;
+            transform-style: preserve-3d;
+            animation: run 10s linear infinite;
+        }
+
+        #content>div {
+            width: 300px;
+            height: 300px;
+            position: absolute;
+            opacity: 0.9;
+        }
+
+        #box1 {
+            background-color: green;
+            transform: rotateX(90deg) translateZ(150px);
+        }
+
+        #box2 {
+            background-color: red;
+            transform: rotateX(-90deg) translateZ(150px);
+        }
+
+        #box3 {
+            background-color: blue;
+            transform: rotateY(90deg) translateZ(150px);
+        }
+
+        #box4 {
+            background-color: yellow;
+            transform: rotateY(-90deg) translateZ(150px);
+        }
+
+        #box5 {
+            background-color: pink;
+            transform: translateZ(-150px);
+        }
+
+        #box6 {
+            background-color: orange;
+            transform: translateZ(150px);
+        }
+
+        @keyframes run {
+            from {
+                transform: rotateX(0) rotateY(0);
+            }
+
+            to {
+                transform: rotateX(360deg) rotateY(360deg);
+            }
+        }
+
+        div img {
+            width: 300px;
+            height: 300px;
+        }
+    </style>
+    <style>
+        #typing-text {
+            font-family: "Microsoft YaHei", sans-serif;
+            font-size: 24px;
+            color: #333;
+            line-height: 1.5;
+            padding: 20px;
+
+            border-radius: 10px;
+        }
+    </style>
+
+
+
+</head>
+
+<body>
+    <div id="typing-text"></div>
+
+    <script>
+        const text = "静雯宝宝   /太阳当空照，宝宝对我笑。/空气清新美，宝宝欢喜跳。/花儿含笑望，宝宝咯咯叫。/蓝天白云间，宝宝欢声笑。/岁月静好处，宝宝在身旁。/";
+        const speed = 50;
+        const typingDiv = document.getElementById("typing-text");
+        let i = 0;
+
+        function typing() {
+            if (i >= text.length) return;
+            if (text[i] === '/') typingDiv.innerHTML += "<br>"
+            else
+                typingDiv.innerHTML += text.charAt(i);
+
+            i++;
+            setTimeout(typing, speed);
+        }
+
+        typing();
+    </script>
+    <div id="content">
+        <div id="box1">
+            <img src="./img/1.jpeg">
+        </div>
+        <div id="box2">
+            <img src="./img/2.jpeg">
+        </div>
+        <div id="box3">
+            <img src="./img/3.jpeg">
+        </div>
+        <div id="box4">
+            <img src="./img/4.jpeg">
+        </div>
+        <div id="box5">
+            <img src="./img/5.jpeg">
+        </div>
+        <div id="box6">
+            <img src="./img/6.jpeg">
+        </div>
+    </div>
+
+    <!-- <script>
+        const text = "静雯宝宝   /太阳当空照，宝宝对我笑。/空气清新美，宝宝欢喜跳。/花儿含笑望，宝宝咯咯叫。/蓝天白云间，宝宝欢声笑。/岁月静好处，宝宝在身旁。/"; // 要显示的文本
+        const speed = 50; // 打字速度，单位为毫秒
+
+        const typingDiv = document.createElement("div"); // 创建包含打字效果的 div 元素
+        typingDiv.style.color = "black"; // 设置文本颜色
+        document.body.appendChild(typingDiv); // 将 div 元素添加到网页中
+
+        let i = 0;
+        function typing() {  // 打字函数
+            if (i >= text.length) return;
+            if (text[i] === '/') typingDiv.innerHTML += "<br>"
+            else
+                typingDiv.innerHTML += text.charAt(i);
+
+            i++;
+
+            setTimeout(typing, speed);
+        }
+
+        typing(); // 调用打字函数
+    </script> -->
+</body>
+
+</html>
