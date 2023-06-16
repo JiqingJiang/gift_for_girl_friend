@@ -96,25 +96,6 @@
 
 <body>
     <div id="typing-text"></div>
-
-    <script>
-        const text = "静雯宝宝   /太阳当空照，宝宝对我笑。/空气清新美，宝宝欢喜跳。/花儿含笑望，宝宝咯咯叫。/蓝天白云间，宝宝欢声笑。/岁月静好处，宝宝在身旁。/";
-        const speed = 50;
-        const typingDiv = document.getElementById("typing-text");
-        let i = 0;
-
-        function typing() {
-            if (i >= text.length) return;
-            if (text[i] === '/') typingDiv.innerHTML += "<br>"
-            else
-                typingDiv.innerHTML += text.charAt(i);
-
-            i++;
-            setTimeout(typing, speed);
-        }
-
-        typing();
-    </script>
     <div id="content">
         <div id="box1">
             <img src="./img/1.jpeg">
@@ -135,29 +116,23 @@
             <img src="./img/6.jpeg">
         </div>
     </div>
-
-    <!-- <script>
-        const text = "静雯宝宝   /太阳当空照，宝宝对我笑。/空气清新美，宝宝欢喜跳。/花儿含笑望，宝宝咯咯叫。/蓝天白云间，宝宝欢声笑。/岁月静好处，宝宝在身旁。/"; // 要显示的文本
-        const speed = 50; // 打字速度，单位为毫秒
-
-        const typingDiv = document.createElement("div"); // 创建包含打字效果的 div 元素
-        typingDiv.style.color = "black"; // 设置文本颜色
-        document.body.appendChild(typingDiv); // 将 div 元素添加到网页中
-
+    <script>
+        const text = "静雯宝宝   /太阳当空照，宝宝对我笑。/空气清新美，宝宝欢喜跳。/花儿含笑望，宝宝咯咯叫。/蓝天白云间，宝宝欢声笑。/岁月静好处，宝宝在身旁。/";
+        const speed = 50;
+        const typingDiv = document.getElementById("typing-text");
         let i = 0;
-        function typing() {  // 打字函数
+
+        function typing() {
             if (i >= text.length) return;
             if (text[i] === '/') typingDiv.innerHTML += "<br>"
             else
                 typingDiv.innerHTML += text.charAt(i);
 
             i++;
-
             setTimeout(typing, speed);
         }
-
-        typing(); // 调用打字函数
-    </script> -->
+        typing();
+    </script>
 </body>
 
 </html>
